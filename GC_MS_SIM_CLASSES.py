@@ -51,7 +51,7 @@ class Slider:
     def draw(self, screen):
         pygame.draw.rect(screen, GRAY, self.rect)
         pygame.draw.rect(screen, BLACK, self.handle_rect)
-        label_surface = self.font.render(f"{self.label}: {self.value:.1f}", True, BLACK)
+        label_surface = self.font.render(f"{self.label}: {self.value:.3f}", True, BLACK)
         screen.blit(label_surface, (self.rect.left, self.rect.top - 20))
 
     def handle_event(self, event):
@@ -144,18 +144,19 @@ class GCMSSimulation(ParametersInterface):
 
         self.sliders = {
             'count': Slider(50, 50, 200, 20, 100, 1000, 500, "Particle Count"),
-            'solvent': Slider(50, 100, 200, 20, 1.0, 5.0, 1.0, "Solvent RF"),
-            'nonpolar1': Slider(50, 150, 200, 20, 1.0, 5.0, 1.2, "Nonpolar 1 RF"),
-            'nonpolar2': Slider(50, 200, 200, 20, 1.0, 5.0, 1.4, "Nonpolar 2 RF"),
-            'semipolar1': Slider(50, 250, 200, 20, 1.0, 5.0, 1.6, "Semipolar 1 RF"),
-            'semipolar2': Slider(50, 300, 200, 20, 1.0, 5.0, 1.8, "Semipolar 2 RF"),
-            'polar1': Slider(50, 350, 200, 20, 1.0, 5.0, 2.0, "Polar 1 RF"),
-            'polar2': Slider(50, 400, 200, 20, 1.0, 5.0, 2.2, "Polar 2 RF"),
-            'verypolar': Slider(50, 450, 200, 20, 1.0, 5.0, 2.5, "Very Polar RF"),
+            'solvent': Slider(50, 100, 200, 20, 1.0, 2.0, 1.0, "Solvent RF"),
+            'nonpolar1': Slider(50, 150, 200, 20, 1.0, 2.0, 1.1, "Nonpolar 1 RF"),
+            'nonpolar2': Slider(50, 200, 200, 20, 1.0, 2.0, 1.22, "Nonpolar 2 RF"),
+            'semipolar1': Slider(50, 250, 200, 20, 1.0, 2.0, 1.32, "Semipolar 1 RF"),
+            'semipolar2': Slider(50, 300, 200, 20, 1.0, 2.0, 1.43, "Semipolar 2 RF"),
+            'polar1': Slider(50, 350, 200, 20, 1.0, 2.0, 1.46, "Polar 1 RF"),
+            'polar2': Slider(50, 400, 200, 20, 1.0, 2.0, 1.59, "Polar 2 RF"),
+            'verypolar': Slider(50, 450, 200, 20, 1.0, 2.0, 2, "Very Polar RF"),
             'column_length': Slider(50, 500, 200, 20, 0.1, 1.25, 1.0, "Column Length"),
             'start_temp': Slider(300, 50, 200, 20, 50, 300, 100, "Start Temp (°C)"),
             'end_temp': Slider(300, 100, 200, 20, 50, 300, 200, "End Temp (°C)"),
-            'ramp_rate': Slider(300, 150, 200, 20, 1, 20, 5, "Ramp Rate (°C/min)")
+            'ramp_rate': Slider(300, 150, 200, 20, 1, 20, 5, "Ramp Rate (°C/min)"),
+            'Randomness_DEBUG': Slider(300, 200, 200, 20, 0.001, 10, 0.01, "Randomness DEBUG")
         }
 
         self.inject_button = Button(50, 550, 100, 40, "Inject")
@@ -213,6 +214,9 @@ class GCMSSimulation(ParametersInterface):
     def get_ramp_rate(self):
         return self.sliders['ramp_rate'].value
 
+    def get_randomness_DEBUG(self):
+        return self.sliders['Randomness_DEBUG'].value
+
     def calculate_temp_factor(self):
         start_temp = self.sliders['start_temp'].value
         end_temp = self.sliders['end_temp'].value
@@ -238,14 +242,14 @@ class GCMSSimulation(ParametersInterface):
                 for _ in range(type_count):
                     x = random.uniform(self.column_start_x - 20, self.column_start_x)
                     y = random.uniform(column_start_y - 50, column_start_y + 50)
-                    retention_factor = self.sliders[p_type].value
+                    retention_factor = self.sliders[p_type].value * self.calculate_temp_factor() + random.randint(0, int(self.get_randomness_DEBUG()))
                     self.particles.append(Particle(x, y, retention_factor, p_type))
         else:
             for _ in range(count):
                 particle_type = random.choice(particle_types)
                 x = random.uniform(self.column_start_x - 20, self.column_start_x)
                 y = random.uniform(column_start_y - 50, column_start_y + 50)
-                retention_factor = self.sliders[particle_type].value
+                retention_factor = self.sliders[particle_type].value * self.calculate_temp_factor() + random.randint(0, int(self.get_randomness_DEBUG()))
                 self.particles.append(Particle(x, y, retention_factor, particle_type))
 
         self.chromatogram = []
