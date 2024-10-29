@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64ea0a92-840a-424d-9b59-ee2cc396d1b7" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GC_MS_SIM.py" beforeDir="false" afterPath="$PROJECT_DIR$/GC_MS_SIM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GC_MS_SIM_CLASSES.py" beforeDir="false" afterPath="$PROJECT_DIR$/GC_MS_SIM_CLASSES.py" afterDir="false" />
-    </list>
+    <list default="true" id="64ea0a92-840a-424d-9b59-ee2cc396d1b7" name="Changes" comment="added debug functinonality WIP" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +120,7 @@
       <workItem from="1729812384113" duration="1135000" />
       <workItem from="1729874757452" duration="5517000" />
       <workItem from="1730047249616" duration="4233000" />
-      <workItem from="1730213107323" duration="1346000" />
+      <workItem from="1730213107323" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -134,16 +130,41 @@
       <option name="project" value="LOCAL" />
       <updated>1730048394979</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added debug functinonality WIP">
+      <option name="closed" value="true" />
+      <created>1730214490787</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730214490787</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1a46124a-2cdd-4eb7-9498-72a334a5bf2f" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1a46124a-2cdd-4eb7-9498-72a334a5bf2f">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="alpha 0.1" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="added debug functinonality WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="added debug functinonality WIP" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GC_MS_Sim$RUN_GCMS.coverage" NAME="RUN GCMS Coverage Results" MODIFIED="1730214423693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
