@@ -10,9 +10,13 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 from GC_SIM import GCMSSimulation
 import pygame
+import gc_core
 
 # Global simulation instance
 global_simulation = None
+#global params
+def set_global_vars():
+     gc_core.GCParameters.random_spread = input("Random Spread: ")
 
 class DebugController:
     def __init__(self, simulation):

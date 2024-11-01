@@ -52,10 +52,10 @@ class GCMSSimulation:
         """Initialize all UI components"""
         self.sliders = {
             'count': Slider(50, 50, 200, 20, 100, 1000, 500, "Particle Count"),
-            'solvent': Slider(50, 100, 200, 20, 1.0, 2.0, 1.0, "Solvent RF"),
-            'nonpolar1': Slider(50, 150, 200, 20, 1.0, 3.0, 1.5, "Nonpolar 1 RF"),
-            'nonpolar2': Slider(50, 200, 200, 20, 1.0, 3.0, 1.8, "Nonpolar 2 RF"),
-            'semipolar1': Slider(50, 250, 200, 20, 1.5, 3.5, 2.2, "Semipolar 1 RF"),
+            'solvent': Slider(50, 100, 200, 20, 0.05, 1.0, .1, "Solvent RF"),
+            'nonpolar1': Slider(50, 150, 200, 20, 0.1, 1.0, .5, "Nonpolar 1 RF"),
+            'nonpolar2': Slider(50, 200, 200, 20, .2, 1.2, .7, "Nonpolar 2 RF"),
+            'semipolar1': Slider(50, 250, 200, 20, 1.0, 2, 1.2, "Semipolar 1 RF"),
             'semipolar2': Slider(50, 300, 200, 20, 1.5, 3.5, 2.5, "Semipolar 2 RF"),
             'polar1': Slider(50, 350, 200, 20, 2.0, 4.0, 2.8, "Polar 1 RF"),
             'polar2': Slider(50, 400, 200, 20, 2.0, 4.0, 3.2, "Polar 2 RF"),

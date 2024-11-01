@@ -6,6 +6,7 @@ from gc_ui import COLORS
 
 class GCParameters:
     """Physical and chemical parameters for GC simulation"""
+    random_spread = 0.05
 
     def __init__(self):
         # Fundamental constants
@@ -129,7 +130,7 @@ class Particle:
         self.peak_width = (1.0 + diffusion_contribution) * temp_contribution * time_contribution
 
         # More pronounced vertical movement
-        amplitude = 30 * (1 / temp_factor) * math.exp(-self.time / 200)  # Increased amplitude, slower decay
+        amplitude = 15 * (1 / temp_factor) * math.exp(-self.time / 200)  # Increased amplitude, slower decay
         random_offset = random.gauss(0, self.peak_width)
         self.y = column_y + amplitude * math.sin(0.02 * self.x) + random_offset
 
@@ -139,7 +140,7 @@ class ParticleManager:
 
     def __init__(self, gc_params):
         self.gc_params = gc_params
-
+        #this controls the particle spread.
     def create_particle_group(self, count, particle_type, x_pos, y_pos, injection_width,
                               base_velocity, diffusion_base, retention_factor, temp_factor):
         """Create a group of particles with similar properties"""
@@ -147,12 +148,12 @@ class ParticleManager:
 
         for _ in range(count):
             # Add variation to injection position
-            x = x_pos + random.gauss(0, injection_width)
-            y = random.gauss(y_pos, injection_width / 2)
+            x = x_pos + random.gauss(0, injection_width/100)
+            y = random.gauss(y_pos, injection_width / 100)
 
             # Add variation to retention factor
             rf = retention_factor * temp_factor
-            rf_variation = random.gauss(0, 0.05 * rf)  # 5% variation
+            rf_variation = random.gauss(0, GCParameters.random_spread * rf)  # 5% variation
             final_rf = rf + rf_variation
 
             # Calculate diffusion coefficient based on molecular size
