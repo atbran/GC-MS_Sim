@@ -17,7 +17,8 @@ from tkinter import ttk
 # Welcome message
 DEBUG = False
 
-
+#currently does not work
+#todo fix debug controls
 def create_debug_controls():
     debug_window = tk.Toplevel()
     debug_window.title("GC-MS Debug Controls")

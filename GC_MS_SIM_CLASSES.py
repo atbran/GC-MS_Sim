@@ -125,9 +125,9 @@ class Particle:
 
     def move(self, dt, temp_factor):
         self.time += dt
-        speed = (2.0 / self.retention_factor) * temp_factor
+        speed = (2.0 / self.retention_factor * math.sqrt(temp_factor)) * temp_factor * 1.5
         self.x += speed * dt
-        amplitude = 50
+        amplitude = 50 *(1/temp_factor)
         frequency = 0.05
         self.y = column_start_y + amplitude * math.sin(frequency * self.x)
 
@@ -156,7 +156,7 @@ class GCMSSimulation(ParametersInterface):
             'start_temp': Slider(300, 50, 200, 20, 50, 300, 100, "Start Temp (°C)"),
             'end_temp': Slider(300, 100, 200, 20, 50, 300, 200, "End Temp (°C)"),
             'ramp_rate': Slider(300, 150, 200, 20, 1, 20, 5, "Ramp Rate (°C/min)"),
-            'Randomness_DEBUG': Slider(300, 200, 200, 20, 0.001, 10, 0.01, "Randomness DEBUG")
+            'Randomness_DEBUG': Slider(300, 200, 200, 20, 0.001, 1, 0.01, "Randomness DEBUG")
         }
 
         self.inject_button = Button(50, 550, 100, 40, "Inject")
@@ -225,7 +225,7 @@ class GCMSSimulation(ParametersInterface):
         current_temp = start_temp + (ramp_rate * self.simulation_time / 60)
         current_temp = min(current_temp, end_temp)
 
-        temp_factor = current_temp / start_temp
+        temp_factor = math.pow(current_temp / start_temp,2.5)
         return temp_factor
 
     def inject_particles(self):
@@ -390,7 +390,7 @@ class GCMSSimulation(ParametersInterface):
                     self.reset()
                 self.uniform_toggle.handle_event(event)
 
-            dt = 0.5
+            dt = 0.25
             self.update(dt)
             self.draw()
             clock.tick(60)
