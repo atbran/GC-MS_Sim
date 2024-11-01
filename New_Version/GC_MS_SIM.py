@@ -124,7 +124,7 @@ def run_simulation(debug_mode=False):
         # Show welcome message
         root = tk.Tk()
         root.withdraw()
-        tk.messagebox.showinfo('GC/MS Simulation ALPHA 0.1',
+        tk.messagebox.showinfo('GC/MS Simulation ALPHA 0.2',
                              'Welcome to the GC/MS Simulation! \n \n'
                              'If you would like to run in DEBUG mode, please change the DEBUG '
                              'variable to True. \n\n Press OK to continue.')

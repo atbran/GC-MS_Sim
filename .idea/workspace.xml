@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ea0a92-840a-424d-9b59-ee2cc396d1b7" name="Changes" comment="added debug functinonality WIP">
-      <change afterPath="$PROJECT_DIR$/New_Version/GC_MS_SIM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/New_Version/GC_SIM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/New_Version/gc_core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/New_Version/gc_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GC_MS_SIM.py" beforeDir="false" afterPath="$PROJECT_DIR$/GC_MS_SIM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GC_MS_SIM_CLASSES.py" beforeDir="false" afterPath="$PROJECT_DIR$/GC_MS_SIM_CLASSES.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New_Version/gc_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/New_Version/gc_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/ayden/PycharmProjects/GC-MS_Sim/New_Version",
+    "last_opened_file_path": "C:/Users/ayden/PycharmProjects/GC-MS_Sim/New_Version/GC_MS_SIM.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +82,31 @@
       <recent name="C:\Users\ayden\PycharmProjects\GC-MS_Sim\New_Version" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.RUN GCMS V2">
+    <configuration name="RUN GCMS V2" type="PythonConfigurationType" factoryName="Python">
+      <module name="GC-MS_Sim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (GC-MS_Sim)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/New_Version/GC_MS_SIM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RUN GCMS" type="PythonConfigurationType" factoryName="Python">
       <module name="GC-MS_Sim" />
       <option name="ENV_FILES" value="" />
@@ -113,6 +131,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.RUN GCMS" />
+      <item itemvalue="Python.RUN GCMS V2" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -139,7 +161,7 @@
       <workItem from="1730234099568" duration="1563000" />
       <workItem from="1730479913689" duration="48000" />
       <workItem from="1730479977915" duration="164000" />
-      <workItem from="1730480366143" duration="3864000" />
+      <workItem from="1730480366143" duration="5145000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -157,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730214490787</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added debug functinonality WIP">
+      <option name="closed" value="true" />
+      <created>1730489148591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730489148591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +224,7 @@
     <SUITE FILE_PATH="coverage/GC_MS_Sim$RUN_GCMS.coverage" NAME="RUN GCMS Coverage Results" MODIFIED="1730482725960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/GC_MS_Sim$GC_MS_Math.coverage" NAME="GC_MS_Math Coverage Results" MODIFIED="1729895081276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GC_MS_Sim$main.coverage" NAME="main Coverage Results" MODIFIED="1730213147776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GC_MS_Sim$GC_MS_SIM.coverage" NAME="GC_MS_SIM Coverage Results" MODIFIED="1730488627994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/New_Version" />
+    <SUITE FILE_PATH="coverage/GC_MS_Sim$GC_MS_SIM.coverage" NAME="GC_MS_SIM Coverage Results" MODIFIED="1730489195094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/New_Version" />
     <SUITE FILE_PATH="coverage/GC_MS_Sim$GC_MS_SIM_CLASSES.coverage" NAME="GC_MS_SIM_CLASSES Coverage Results" MODIFIED="1730213881689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GC_MS_Sim$GC_SIM.coverage" NAME="GC_SIM Coverage Results" MODIFIED="1730488622489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/New_Version" />
   </component>

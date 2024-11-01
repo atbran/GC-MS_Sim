@@ -66,23 +66,16 @@ class GCParameters:
         return temp_factor
 
     def calculate_flow_parameters(self, pressure_psi, carrier_gas, column_length):
-        """Calculate flow parameters with increased base velocity"""
+        """Calculate flow parameters with adjusted base velocity"""
         gas_properties = self.carrier_gases[carrier_gas]
 
-        # Convert units with increased flow
-        column_radius = 0.125 / 1000  # mm to meters
-        column_length = column_length * 15  # Reduced effective length for faster movement
-        viscosity = gas_properties['viscosity'] * 1e-5  # to Pa·s
-        pressure_pa = pressure_psi * 6894.76  # psi to Pa
-
-        # Calculate velocity with higher base rate
-        velocity = (pressure_pa * math.pi * column_radius ** 4) / (8 * viscosity * column_length)
-        velocity *= 2  # Double the base velocity
+        # Set base_velocity proportional to pressure
+        base_velocity = pressure_psi * 0.01  # m/s per psi
 
         # Calculate diffusion coefficient
         diffusion_base = gas_properties['diffusivity'] * 1e-5
 
-        return velocity, diffusion_base
+        return base_velocity, diffusion_base
 
 
 class Particle:
@@ -95,7 +88,7 @@ class Particle:
         self.particle_type = particle_type
         self.time = 0
         self.detected = False
-        self.base_velocity = base_velocity * 1000  # Increase base velocity for better visualization
+        self.base_velocity = base_velocity  # Already in pixels per second
         self.diffusion_coeff = diffusion_coeff
         self.peak_width = 1.0
 

@@ -253,7 +253,7 @@ class GCMSSimulation:
                     self.reset_simulation_parameters()
                 self.uniform_toggle.handle_event(event)
 
-            dt = 0.25
+            dt = 0.5
             self.update(dt)
             self.draw()
             clock.tick(60)
